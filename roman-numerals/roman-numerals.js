@@ -1,10 +1,10 @@
 export const toRoman = (num) => {
-  let position = 0;
+  let unitIndex = 0;
   let output = "";
 
-  for (let i = 1; i < 1001; i *= 10) {
+  for (let i = 1; i <= 1000; i *= 10) {
     const placeValue = Math.floor(num / i % 10);
-    output = `${toRomanIndiv(UNITS[position], UNITS[position += 1], UNITS[position += 1], placeValue)}${output}`;
+    output = `${toRomanIndiv(UNITS[unitIndex], UNITS[unitIndex += 1], UNITS[unitIndex += 1], placeValue)}${output}`;
   }
 
   return output;
