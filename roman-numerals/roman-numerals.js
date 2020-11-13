@@ -1,20 +1,16 @@
 export const toRoman = (num) => {
-  let position = 8;
-  let remainingNum = num;
+  let position = 0;
   let output = "";
 
-  for (let i = 1000; i >= 1; i/= 10) {
-    const multipleOfI = Math.floor(remainingNum / i);
-
-    output += toRomanIndiv(UNITS[position], UNITS[position -= 1], UNITS[position -= 1], multipleOfI);
-
-    remainingNum -= multipleOfI * i;
+  for (let i = 1; i < 1001; i *= 10) {
+    const placeValue = Math.floor(num / i % 10);
+    output = `${toRomanIndiv(UNITS[position], UNITS[position += 1], UNITS[position += 1], placeValue)}${output}`;
   }
 
   return output;
 };
 
-const toRomanIndiv = (ten, five, one, num) => {
+const toRomanIndiv = (one, five, ten, num) => {
   switch (num) {
     case 1: {
       return `${one}`;
