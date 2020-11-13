@@ -10,5 +10,6 @@ Problems from
 - resistor-color
 - resistor-color-duo
 - roman-numerals
+- leap
 
 ## Not Done
