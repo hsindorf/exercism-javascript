@@ -11,5 +11,6 @@ Problems from
 - resistor-color-duo
 - roman-numerals
 - leap
+- triangle
 
 ## Not Done
